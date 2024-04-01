@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>four a</title>
+</head>
+<body>
+  <input id="bg" type="color" oninput="changeBgColor()">
+  <input id="fg" type="color" oninput="changeFgColor()">
+  <br>
+  <label>Hello I am label</label>
+  <script>
+    function changeBgColor() {
+      const bgColor = document.getElementById("bg").value;
+      document.body.style.backgroundColor = bgColor
+    }
+    function changeFgColor() {
+      const fgColor = document.getElementById("fg").value;
+      document.body.style.color = fgColor
+    }
+  </script>
+</body>
+</html>

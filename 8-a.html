@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gender and hobby</title>
+</head>
+<body>
+    <form action="insert" method="post" name="genderForm" onsubmit="return validateGenderForm()">
+        Gender: <input type="radio" name="gender" id="male" value="male"> male
+        <input type="radio" name="gender" id="female" value="female"> female
+        <br>
+        hobby: <select name="hobby" id="hobby">
+            <option value="no">--select--</option>
+            <option value="reading">reading</option>
+            <option value="cooking">cooking</option>
+            <option value="cricket">cricket</option>
+        </select>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+      function validateGenderForm() {
+          const form = document.genderForm;
+          const gender = form.gender;
+          
+          if(!gender.value) {
+              alert("Please select gender");
+              return false;
+          }
+          
+          const hobby = form.hobby.value;
+          if(hobby === "no") {
+              alert("Please select any hobby");
+              return false;
+          }
+          alert("successfull");
+          return true;
+      }
+  </script>
+</body>
+</html>

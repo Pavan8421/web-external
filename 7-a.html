@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>seven a</title>
+</head>
+<body>
+  <form action="unregister" method="post" onsubmit="return validateForm()">
+    <label for="email">Email: </label>
+    <input type="text" id="email" name="email" placeholder="Enter your email"><br>
+    <input type="submit">
+  </form>
+  <script>
+    function validateForm() {
+      const email = document.getElementById("email").value;
+      const email_reg =  /^[a-z0-9]{3,}@gmail[.]com$/;
+      if(!email_reg.test(email))
+      {
+        alert("Invalid email");
+        return false;
+      }
+      alert("Sucessfull");
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <head>
+  <title>three-a</title>
+  </head>
+  <body>
+    <input id="red" value="red" name="btn" type="radio">Red
+    <input id="green" value="green" name="btn" type="radio">Green
+    <input id="yellow" value="yellow" name="btn" type="radio">Yellow
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+      function changeColor()
+      {
+        color = document.querySelector("input[name='btn']:checked").value;
+        document.body.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+
+</html>

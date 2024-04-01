@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>one a</title>
+</head>
+<body>
+  <p id="clock"></p>
+
+  <script>
+    function updateTime() {
+      let clock = document.getElementById("clock");
+      let today = new Date();
+      let hours = today.getHours();
+      let minutes = today.getMinutes();
+      let seconds = today.getSeconds();
+      clock.textContent = `${hours} : ${minutes} : ${seconds}`
+      setTimeout(updateTime, 1000);
+    }
+    updateTime();
+  </script>
+</body>
+</html>

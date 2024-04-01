@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <form action="login" method = "post" onsubmit="return validateForm()">
+    <label for="uname">UserName: </label>
+    <input type="text" name="uname" id="uname"><br>
+    <label for="psswd">Password</label>
+    <input type="password" name="psswd" id="psswd"><br>
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    function validateForm() {
+      const uname = document.getElementById("uname").value;
+      const psswd = document.getElementById("psswd").value;
+      const psswd_reg =  /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if (uname.length < 6) {
+        alert("Username must be of minimum six characters!!!");
+        return false;
+      }
+      if(!psswd_reg.test(psswd))
+      {
+        alert("Invalid password");
+        return false;
+      }
+      alert("Sucessfull login");
+      return true;
+    }
+  </script>
+</body>
+</html>
